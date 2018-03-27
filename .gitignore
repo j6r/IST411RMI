@@ -38,6 +38,6 @@ nbdist/
 
 # Class data
 diary.txt
-/JAXRS/target/
+target/
 
 Recipe.json
