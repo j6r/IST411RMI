@@ -14,5 +14,36 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <id>deploy-dist-compute</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+
+                        <configuration>
+                            <outputDirectory>${basedir}/output/dist</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/compute/target</directory>
+                                    <includes>
+                                        <include>compute.jar</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                   
+
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
