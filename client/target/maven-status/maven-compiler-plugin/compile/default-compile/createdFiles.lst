@@ -1,2 +1,6 @@
+edu/psu/ist411/client/Multiply.class
+edu/psu/ist411/client/Divide.class
 edu/psu/ist411/client/Pi.class
+edu/psu/ist411/client/Add.class
+edu/psu/ist411/client/Subtract.class
 edu/psu/ist411/client/ComputePi.class

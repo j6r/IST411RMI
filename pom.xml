@@ -28,19 +28,43 @@
                         </goals>
 
                         <configuration>
-                            <outputDirectory>${basedir}/output/dist</outputDirectory>
+                            <outputDirectory>${basedir}/output/bin</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/compute/target</directory>
+                                    <directory>${basedir}/client/target</directory>
                                     <includes>
-                                        <include>compute.jar</include>
+                                        <include>client-1.0-SNAPSHOT.jar</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>${basedir}/engine/target</directory>
+                                    <includes>
+                                        <include>engine-1.0-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
                             </resources>
                         </configuration>
-                    </execution>
-                   
+                    </execution>                  
 
+                    <execution>
+                        <id>deploy-dist-classes</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+
+                        <configuration>
+                            <outputDirectory>${basedir}/output/dist</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/client/target/classes/edu/psu/ist411/client/</directory>
+                                    <includes>
+                                        <include>*.class</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>  
                 </executions>
             </plugin>
         </plugins>
