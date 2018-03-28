@@ -37,7 +37,7 @@ nbdist/
 /HTTP/nbproject/private/
 
 # Class data
-diary.txt
 target/
-
-Recipe.json
+output/
+dependency-reduced-pom.xml
+nbactions.xml

@@ -42,6 +42,12 @@
                                         <include>engine-1.0-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
+                                <resource>
+                                    <directory>${basedir}/</directory>
+                                    <includes>
+                                        <include>*.policy</include>
+                                    </includes>
+                                </resource>
                             </resources>
                         </configuration>
                     </execution>                  
