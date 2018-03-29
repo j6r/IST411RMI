@@ -1,3 +1,12 @@
-grant {
+grant codeBase "file:/Users/redjen/Documents/Class/IST411_workspace/L09RMISolo/output/dist/-" {
     permission java.security.AllPermission;
+    permission java.net.SocketPermission "127.0.0.1:1099", "listen";
+    permission java.net.SocketPermission "127.0.0.1:1099", "connect";
+    permission java.net.SocketPermission "127.0.0.1:1099", "resolve";
+    permission java.net.SocketPermission "localhost:0", "listen";
+    permission java.net.SocketPermission "localhost:0", "connect";
+    permission java.net.SocketPermission "localhost:0", "resolve";
+    permission java.net.SocketPermission "Aratinga", "listen";
+    permission java.net.SocketPermission "Aratinga", "connect";
+    permission java.net.SocketPermission "Aratinga", "resolve";
 };

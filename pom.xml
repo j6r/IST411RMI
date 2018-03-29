@@ -32,7 +32,7 @@
                             <resources>
                                 <resource>
                                     <directory>${basedir}/client/target</directory>
-                                    <includes>
+                                    <includes>x 
                                         <include>client-1.0-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
@@ -42,6 +42,7 @@
                                         <include>engine-1.0-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
+                                
                                 <resource>
                                     <directory>${basedir}/</directory>
                                     <includes>
@@ -63,7 +64,13 @@
                             <outputDirectory>${basedir}/output/dist</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/client/target/classes/edu/psu/ist411/client/</directory>
+                                    <directory>${basedir}/compute/target</directory>
+                                    <includes>
+                                        <include>compute-1.0-SNAPSHOT.jar</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>${basedir}/client/target/classes/client/</directory>
                                     <includes>
                                         <include>*.class</include>
                                     </includes>

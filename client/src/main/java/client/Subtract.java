@@ -1,6 +1,6 @@
-package edu.psu.ist411.client;
+package client;
 
-import edu.psu.ist411.compute.Task;
+import compute.Task;
 import java.io.Serializable;
 
 /**
@@ -8,6 +8,8 @@ import java.io.Serializable;
  *
  */
 public class Subtract implements Task<Double>, Serializable {
+   
+   private static final long serialVersionUID = 1L;
 
    private final double operand1;
    private final double operand2;

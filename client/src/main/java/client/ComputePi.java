@@ -1,6 +1,6 @@
-package edu.psu.ist411.client;
+package client;
 
-import edu.psu.ist411.compute.Compute;
+import compute.Compute;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.math.BigDecimal;

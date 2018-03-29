@@ -1,7 +1,7 @@
-package edu.psu.ist411.engine;
+package engine;
 
-import edu.psu.ist411.compute.Compute;
-import edu.psu.ist411.compute.Task;
+import compute.Compute;
+import compute.Task;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;

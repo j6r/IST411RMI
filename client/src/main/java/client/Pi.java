@@ -1,6 +1,6 @@
-package edu.psu.ist411.client;
+package client;
 
-import edu.psu.ist411.compute.Task;
+import compute.Task;
 import java.io.Serializable;
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package edu.psu.ist411.compute;
+package compute;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

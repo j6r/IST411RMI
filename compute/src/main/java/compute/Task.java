@@ -1,4 +1,4 @@
-package edu.psu.ist411.compute;
+package compute;
 
 /**
  * The second interface needed for the compute engine is the Task interface,
