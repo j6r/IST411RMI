@@ -1,11 +1,20 @@
 #!/usr/bin/sh
 
+function shutdown() {
+    echo "Shutting down ComputeEngine"
+    pkill rmiregistry
+    exit 2
+}
+
+trap "shutdown" 2
+
 export PROJECT_DIR="$HOME/Documents/Class/IST411_workspace/L09RMISolo/output"
 rm -rf $PROJECT_DIR
 
 mvn clean package
 
 cd $PROJECT_DIR/dist
+pkill rmiregistry
 rmiregistry &
 
 

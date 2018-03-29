@@ -21,7 +21,7 @@
                 <version>2.7</version>
                 <executions>
                     <execution>
-                        <id>deploy-dist-compute</id>
+                        <id>deploy-dist-jars</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
