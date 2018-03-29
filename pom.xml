@@ -21,12 +21,11 @@
                 <version>2.7</version>
                 <executions>
                     <execution>
-                        <id>deploy-dist-jars</id>
+                        <id>deploy-jars</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
-
                         <configuration>
                             <outputDirectory>${basedir}/output/bin</outputDirectory>
                             <resources>
@@ -47,12 +46,11 @@
                     </execution>                  
 
                     <execution>
-                        <id>deploy-dist-classes</id>
+                        <id>deploy-computejar</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
-
                         <configuration>
                             <outputDirectory>${basedir}/output/dist</outputDirectory>
                             <resources>
@@ -62,18 +60,12 @@
                                         <include>compute-1.0-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
-                                <resource>
-                                    <directory>${basedir}/client/target/classes/client/</directory>
-                                    <includes>
-                                        <include>*.class</include>
-                                    </includes>
-                                </resource>
                             </resources>
                         </configuration>
                     </execution>  
                     
                     <execution>
-                        <id>deploy-dist-classes2</id>
+                        <id>deploy-dist-compute</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
@@ -91,6 +83,26 @@
                             </resources>
                         </configuration>
                     </execution>  
+                    
+                    <execution>
+                        <id>deploy-dist-client</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+
+                        <configuration>
+                            <outputDirectory>${basedir}/output/dist/client</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/client/target/classes/client</directory>
+                                    <includes>
+                                        <include>*.class</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution> 
                 </executions>
             </plugin>
         </plugins>
