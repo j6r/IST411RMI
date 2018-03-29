@@ -42,13 +42,6 @@
                                         <include>engine-1.0-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
-                                
-                                <resource>
-                                    <directory>${basedir}/</directory>
-                                    <includes>
-                                        <include>*.policy</include>
-                                    </includes>
-                                </resource>
                             </resources>
                         </configuration>
                     </execution>                  
@@ -71,6 +64,26 @@
                                 </resource>
                                 <resource>
                                     <directory>${basedir}/client/target/classes/client/</directory>
+                                    <includes>
+                                        <include>*.class</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>  
+                    
+                    <execution>
+                        <id>deploy-dist-classes2</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+
+                        <configuration>
+                            <outputDirectory>${basedir}/output/dist/compute</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/compute/target/classes/compute</directory>
                                     <includes>
                                         <include>*.class</include>
                                     </includes>
