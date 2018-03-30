@@ -16,7 +16,7 @@ public class Subtract implements Task<Double>, Serializable {
 
    public Subtract(double operand1, double operand2) {
       this.operand1 = operand1;
-      this.operand2 = this.operand1;
+      this.operand2 = operand2;
    }
 
    @Override

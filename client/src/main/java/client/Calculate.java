@@ -1,9 +1,9 @@
 package client;
 
 import compute.Compute;
+import compute.Task;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Calculate {
@@ -20,7 +20,9 @@ public class Calculate {
 
          int operand1;
          int operand2;
-         String operator;
+         String operator = "";
+         double result = 0.00;
+         Task<Double> task;
 
          System.out.println("Please enter the first operand: ");
          operand1 = scanner.nextInt();
@@ -33,26 +35,31 @@ public class Calculate {
 
          switch (operator) {
             case "+":
-               System.out.println("+");
+               task = new Add(operand1, operand2);
                break;
             case "-":
-               System.out.println("-");
+               task = new Subtract(operand1, operand2);
                break;
             case "*":
-               System.out.println("*");
+               task = new Multiply(operand1, operand2);
                break;
             case "/":
-               System.out.println("/");
+               task = new Divide(operand1, operand2);
                break;
             default:
-               System.out.println("Please enter a valid operator.");
+               task = null;
          }
 
-         Pi task = new Pi(operand1);
-         BigDecimal pi = comp.executeTask(task);
-         System.out.println(pi);
+         if (task != null) {
+            result = comp.executeTask(task);
+            System.out.printf("%d %s %d = %f%n",
+                    operand1, operator, operand2, result);
+         } else {
+            System.out.printf("Error: unknown operator %s%n", operator);
+         }
+
       } catch (Exception e) {
-         System.err.println("ComputePi exception:");
+         System.err.println("Calculate exception:");
          e.printStackTrace();
       }
 

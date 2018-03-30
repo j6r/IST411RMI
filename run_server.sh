@@ -7,18 +7,23 @@ function shutdown() {
 }
 
 trap "shutdown" 2
+trap "shutdown" 1
 
+pkill rmiregistry
+
+echo "Resetting\n"
 export PROJECT_DIR="$HOME/Documents/Class/IST411_workspace/L09RMISolo/output"
 rm -rf $PROJECT_DIR
+mkdir $PROJECT_DIR
 
 echo "Building engine\n"
 mvn clean package -q
 
+echo "Starting rmiregistry\n"
 cd $PROJECT_DIR/dist
-pkill rmiregistry
 rmiregistry &
 
-
+echo "Starting engine\n"
 java -cp $PROJECT_DIR/dist/compute-1.SNAPSHOT.jar \
     -Djava.rmi.server.codebase=file:$PROJECT_DIR/dist/ \
     -Djava.rmi.server.hostname=127.0.0.1 \

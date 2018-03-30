@@ -16,7 +16,7 @@ public class Multiply implements Task<Double>, Serializable {
 
    public Multiply(double operand1, double operand2) {
       this.operand1 = operand1;
-      this.operand2 = this.operand1;
+      this.operand2 = operand2;
    }
 
    @Override
