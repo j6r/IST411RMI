@@ -19,31 +19,7 @@
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.7</version>
-                <executions>
-                    <execution>
-                        <id>deploy-jars</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/output/bin</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/client/target</directory>
-                                    <includes>x 
-                                        <include>client-1.0-SNAPSHOT.jar</include>
-                                    </includes>
-                                </resource>
-                                <resource>
-                                    <directory>${basedir}/engine/target</directory>
-                                    <includes>
-                                        <include>engine-1.0-SNAPSHOT.jar</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>                  
+                <executions>               
 
                     <execution>
                         <id>deploy-computejar</id>
