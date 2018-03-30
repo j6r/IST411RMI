@@ -12,7 +12,7 @@ trap "shutdown" 1
 pkill rmiregistry
 
 echo "Resetting\n"
-export PROJECT_DIR="$HOME/Documents/Class/IST411_workspace/L09RMISolo/output"
+export PROJECT_DIR=`pwd`/output
 rm -rf $PROJECT_DIR
 mkdir $PROJECT_DIR
 
