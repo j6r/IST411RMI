@@ -31,71 +31,32 @@
                 </configuration>
             </plugin>
             
+            <!-- copy codebase -->
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.7</version>
                 <executions>               
 
-                    <!--
                     <execution>
-                        <id>deploy-computejar</id>
+                        <id>package-dist</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
+
                         <configuration>
                             <outputDirectory>${basedir}/dist</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/compute/target</directory>
-                                    <includes>
-                                        <include>compute-1.0-SNAPSHOT.jar</include>
-                                    </includes>
+                                    <directory>${basedir}/compute/target/classes</directory>
+                                </resource>
+                                <resource>
+                                    <directory>${basedir}/client/target/classes</directory>
                                 </resource>
                             </resources>
                         </configuration>
                     </execution>  
-                    -->
-
-                    <execution>
-                        <id>deploy-dist-compute</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-
-                        <configuration>
-                            <outputDirectory>${basedir}/dist/compute</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/compute/target/classes/compute</directory>
-                                    <includes>
-                                        <include>*.class</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>  
-                    
-                    <execution>
-                        <id>deploy-dist-client</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-
-                        <configuration>
-                            <outputDirectory>${basedir}/dist/client</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/client/target/classes/client</directory>
-                                    <includes>
-                                        <include>*.class</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution> 
+            
                 </executions>
             </plugin>
         </plugins>

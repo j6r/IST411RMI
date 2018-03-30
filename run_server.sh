@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 function shutdown() {
-    echo "\nShutting down engine\n"
+    echo "Shutting down"
     pkill rmiregistry
     exit 2
 }
@@ -13,14 +13,14 @@ pkill rmiregistry
 
 export PROJECT_DIR=`pwd`
 
-echo "Building engine\n"
+echo "Building engine"
 mvn clean package -q
 
-echo "Starting rmiregistry\n"
+echo "Starting rmiregistry"
 cd $PROJECT_DIR/dist
 rmiregistry &
 
-echo "Starting engine\n"
+echo "Starting engine"
 java -cp $PROJECT_DIR/compute/target/compute-1.SNAPSHOT.jar \
     -Djava.rmi.server.codebase=file:$PROJECT_DIR/dist/ \
     -Djava.rmi.server.hostname=127.0.0.1 \
