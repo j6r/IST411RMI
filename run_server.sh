@@ -11,10 +11,7 @@ trap "shutdown" 1
 
 pkill rmiregistry
 
-echo "Resetting\n"
 export PROJECT_DIR=`pwd`
-rm -rf $PROJECT_DIR/dist
-mkdir $PROJECT_DIR/dist
 
 echo "Building engine\n"
 mvn clean package -q
